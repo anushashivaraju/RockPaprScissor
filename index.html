@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissor</title>
+</head>
+<body>
+    <script>
+
+        function getComputerChoice(choice){
+            choice = ['Rock', 'Paper', 'Scissor'];
+            return choice[Math.floor(Math.random()*choice.length)]
+        }
+
+        function playRound(playerSelection, computerSlection){
+            switch (playerSelection) {
+                case 'rock':
+                    if (computerSelection == 'rock') {
+                        return console.log('Draw!');
+                    } else if (computerSelection == 'paper') 
+                    {           
+                        return console.log('You Lose! Paper beats Rock');
+                    } else 
+                    {
+                        return console.log('You Win! Rock beats Scissors');
+                    }
+                 
+                    break;
+                case 'paper':
+                    if (computerSelection == 'paper') {
+                        return console.log('Draw!');
+                    } else if (computerSelection == 'scissors') {
+                        
+                        return console.log('You Lose! Scissors beats Paper');
+                    } else {
+                        
+                        return console.log('You Win! Paper beats Rock');
+                    }
+                    break;
+                case 'scissors': 
+                    if (computerSelection == 'scissors') {
+                        return console.log('Draw!');
+                    } else if (computerSelection == 'paper') {
+                       
+                        return console.log('You Win! Scissors beats Paper');
+                    } else {
+                        
+                        return console.log('You Lose! Rock beats Scissors');
+                    }
+                    break;
+            }
+         }
+
+        
+        
+        
+        const playerSelection = "rock";
+        const computerSelection = getComputerChoice();
+        
+        function game(){
+            playRound("rock", computerSelection);
+            playRound("paper",computerSelection);
+            playRound("scissors", computerSelection);
+            playRound("rock", computerSelection);
+            playRound("paper", computerSelection);
+
+        }
+
+        game();
+
+    </script>
+</body>
+</html>
